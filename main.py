@@ -5,6 +5,8 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
 from bot.buttons.buttons import Buttons
 from bot.config import load_config
+from bot.handlers.callback import Callback
+from bot.handlers.messages import Message
 from bot.handlers.start import Start
 
 
@@ -19,6 +21,8 @@ async def main():
     buttons = Buttons()
 
     start = Start(bot, dp, buttons)
+    Callback(bot, dp, buttons)
+    Message(bot, dp, buttons)
     # Каждый класс из hanler
 
     await dp.start_polling()
