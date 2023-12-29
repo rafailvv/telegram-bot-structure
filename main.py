@@ -1,5 +1,5 @@
 import asyncio
-import logging  # Import logging module
+import logging
 
 from aiogram.fsm.storage.redis import RedisStorage, Redis
 from aiogram import Bot, Dispatcher
@@ -14,7 +14,7 @@ logging.basicConfig(
 BOT_TOKEN = config.tg_bot.token
 
 bot = Bot(BOT_TOKEN, parse_mode="HTML")
-redis = Redis(host="localhost")
+redis = Redis(host=config.redis.host)
 storage = RedisStorage(redis=redis)
 dp = Dispatcher(storage=storage)
 

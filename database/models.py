@@ -7,8 +7,8 @@ Base = declarative_base()
 metadata = Base.metadata
 
 
-class TestTable(Base):
-    __tablename__ = "students_iu"
+class Users(Base):
+    __tablename__ = "users"
 
     id = Column(Integer, primary_key=True)
-    test_text = Column(String(100))
+    username = Column(String(100))

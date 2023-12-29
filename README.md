@@ -12,8 +12,8 @@
 
     | Название переменной | Описание                                                 | Примерное значение                                      |
     |--------------------|----------------------------------------------------------|----------------------------------------------------------|
-    | BOT_TOKEN          | Токен API бота Telegram.                                 | BOT_TOKEN=6972762642:AAEQ5k5aI_QfR2UqSYhTUE5zhgZxXPjWv_Y |
-    | ADMINS             | Список идентификаторов пользователей Telegram для администраторов бота. | ADMINS=12345,678910                                      |
+    | BOT_TOKEN          | Токен API бота Telegram.                                 | BOT_TOKEN=123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11 |
+    | ADMINS             | Список идентификаторов пользователей Telegram для администраторов бота. | ADMINS=12345678,910111213                                     |
     | DB_NAME            | Название базы данных PostgreSQL.                         | DB_NAME=example_db_name                                  |
     | DB_USER            | Имя пользователя для аутентификации в PostgreSQL.       | DB_USER=example_db_user                                  |
     | DB_PASS            | Пароль для аутентификации в PostgreSQL.                 | DB_PASS=example_db_password                              |

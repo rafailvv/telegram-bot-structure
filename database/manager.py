@@ -1,8 +1,9 @@
-from database.session import BaseDatabase
-from database.relations.student import StudentDatabase
-
-from dotenv import dotenv_values
+from database.queries.users import UserQueries
+from bot.config import config
 
 
-class Database(BaseDatabase):
-    students = StudentDatabase(config)
+class Database:
+    user = UserQueries(config)
+
+
+db = Database()
