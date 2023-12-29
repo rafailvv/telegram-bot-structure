@@ -1,1 +1,1 @@
-from keyboard import start_kb
+from bot.buttons.keyboard import start_kb

@@ -1,0 +1,8 @@
+[Service]
+User=root
+WorkingDirectory=/home/<root_directory>
+ExecStart=/usr/bin/python3 main.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
