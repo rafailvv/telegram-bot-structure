@@ -1,5 +1,40 @@
 # Структура Telegram-бота на aiogram 3
 
+```python
+├── README.md
+├── bot
+│   ├── __init__.py
+│   ├── buttons
+│   │   ├── __init__.py
+│   │   ├── inline.py
+│   │   └── keyboard.py
+│   ├── config.py
+│   ├── handlers
+│   │   ├── __init__.py
+│   │   ├── callback.py
+│   │   ├── commands.py
+│   │   └── menu.py
+│   ├── message_text
+│   │   ├── __init__.py
+│   │   └── text.py
+│   └── misc
+│       ├── __init__.py
+│       └── states.py
+├── database
+│   ├── __init__.py
+│   ├── manager.py
+│   ├── models.py
+│   ├── queries
+│   │   └── users.py
+│   └── session.py
+├── main.py
+├── requirements.txt
+└── systemd
+    └── bot.service
+
+```
+
+## Запуск кода
 Выполните следующие шаги, чтобы настроить и запустить бота с помощью этого шаблона:
 
 1. **Создайте новый репозиторий**
