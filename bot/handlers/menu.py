@@ -7,7 +7,7 @@ menu_router = Router()
 
 
 @menu_router.message(F.text == "Что умеет этот бот? 🤔")
-async def cmd_start(message: Message):
+async def menu_handler(message: Message):
     await message.answer(
         WHAT_CAN_BOT_DO,
     )

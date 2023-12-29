@@ -1,8 +1,6 @@
 from aiogram import Router
 from aiogram.types import CallbackQuery
 
-router2 = Router()
-
 callback_router = Router()
 
 
