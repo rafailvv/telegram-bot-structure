@@ -1,5 +1,5 @@
-from aiogram.dispatcher.filters.state import StatesGroup
+from aiogram.fsm.state import State, StatesGroup
 
 
 class MainStates(StatesGroup):
-    pass
+    NewState = State()

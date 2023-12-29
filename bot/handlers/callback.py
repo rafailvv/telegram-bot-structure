@@ -1,11 +1,11 @@
-from aiogram import Bot, Dispatcher
+from aiogram import Router
+from aiogram.types import CallbackQuery
 
-from bot.buttons.buttons import Buttons
+router2 = Router()
+
+callback_router = Router()
 
 
-class Callback:
-    def __init__(self, bot: Bot, dp: Dispatcher, buttons: Buttons):
-        self.buttons = buttons
-        self.dp = dp
-        self.bot = bot
-        # dp.register_callback_query_handler(state = "*")
+@callback_router.callback_query(lambda q: "button" in q.data)
+async def check_query(query: CallbackQuery):
+    await query.message.answer(query.data)

@@ -1,34 +1,26 @@
 import asyncio
 
+from aiogram.fsm.storage.redis import RedisStorage, Redis
 from aiogram import Bot, Dispatcher
-from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
-from bot.buttons.buttons import Buttons
-from bot.config import load_config
-from bot.handlers.callback import Callback
-from bot.handlers.messages import Message
-from bot.handlers.start import Start
+from bot.config import config
+from bot.handlers import *
+
+
+BOT_TOKEN = config.token
+
+bot = Bot(BOT_TOKEN, parse_mode="HTML")
+redis = Redis(host="localhost")
+storage = RedisStorage(redis=redis)
+dp = Dispatcher(storage=storage)
+
+dp.include_routers(commands_router, menu_router, callback_router)
 
 
 async def main():
-    config = load_config('.env')
+    await bot.delete_webhook(drop_pending_updates=True)
+    await dp.start_polling(bot)
 
-    bot = Bot(token =config.token, parse_mode="HTML")
-    dp = Dispatcher(bot, storage=MemoryStorage())
 
-    bot['config'] = config
-
-    buttons = Buttons()
-
-    start = Start(bot, dp, buttons)
-    Callback(bot, dp, buttons)
-    Message(bot, dp, buttons)
-    # Каждый класс из hanler
-
-    await dp.start_polling()
-
-if __name__ == '__main__':
-    try:
-        asyncio.run(main())
-    except Exception as e:
-        print(e)
+if __name__ == "__main__":
+    asyncio.run(main())
